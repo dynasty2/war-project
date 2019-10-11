@@ -1,4 +1,4 @@
-var warDeckCards = [
+const warDeckCards = [
 	{ suit: "Spades", value: 2 }, //creating and nameing cards. placing value
 	{ suit: "Spades", value: 3 },
 	{ suit: "Spades", value: 4 },
@@ -52,6 +52,7 @@ var warDeckCards = [
 	{ suit: "Clubs", value: 13 },
 	{ suit: "Clubs", value: 14 }
 ];
+console.log(warDeckCards);
 // console.log(warDeckCards) making sure the cards showed properly 
 
 function shuffle (array) { //https://www.frankmitchell.org/2015/01/fisher-yates/
@@ -65,7 +66,17 @@ function shuffle (array) { //https://www.frankmitchell.org/2015/01/fisher-yates/
     array[i] = array[j]
     array[j] = temp
   }
-}
+};
+shuffle(warDeckCards);
+console.log(warDeckCards);
+
+const player1Hand = warDeckCards.slice(0,26)
+const player2Hand = warDeckCards.slice(26)
+
+console.log(player1Hand);
+console.log(player2Hand);
+
+
 
 
 
