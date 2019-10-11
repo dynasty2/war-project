@@ -1,5 +1,5 @@
 var warDeckCards = [
-	{ suit: "Spades", value: 2 },
+	{ suit: "Spades", value: 2 }, //creating and nameing cards. placing value
 	{ suit: "Spades", value: 3 },
 	{ suit: "Spades", value: 4 },
 	{ suit: "Spades", value: 5 },
@@ -51,12 +51,21 @@ var warDeckCards = [
 	{ suit: "Clubs", value: 12 },
 	{ suit: "Clubs", value: 13 },
 	{ suit: "Clubs", value: 14 }
-]
+];
+// console.log(warDeckCards) making sure the cards showed properly 
 
-console.log(warDeckCards)
+function shuffle (array) { //https://www.frankmitchell.org/2015/01/fisher-yates/
+  var i = 0
+    , j = 0
+    , temp = null
 
-
-
+  for (i = array.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1))
+    temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+}
 
 
 
