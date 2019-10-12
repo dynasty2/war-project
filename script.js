@@ -52,7 +52,7 @@ const warDeckCards = [
 	{ suit: "Clubs", value: 13 },
 	{ suit: "Clubs", value: 14 }
 ];
-console.log(warDeckCards);
+// console.log(warDeckCards);
 // console.log(warDeckCards) making sure the cards showed properly 
 
 function shuffle (array) { //https://www.frankmitchell.org/2015/01/fisher-yates/
@@ -75,6 +75,42 @@ const player2Hand = warDeckCards.slice(26)
 
 console.log(player1Hand);
 console.log(player2Hand);
+
+// console.log(player1Hand.pop());
+// console.log(player2Hand.pop());
+
+const battleDeck = []
+
+k = player1Hand.pop()
+battleDeck.unshift(k) // P 1
+m = player2Hand.pop()
+battleDeck.unshift(m) // P 2
+console.log(battleDeck)
+
+function battle(a,b) {
+	if (k > m) { 
+		battleDeck.pop(k,m) && player1Hand.unshift(k,m);
+	} else if (k < m) { 
+		battleDeck.pop(k,m) && player2Hand.unshift(k,m);
+    } else {
+  	    function war(a,b,c) {
+  	    	player1Hand.pop(a,b,c) && player2Hand.pop(a,b,c);
+  	    }
+  }
+  }	
+
+
+// console.log(player1Hand)
+// console.log(player2Hand)
+
+// if (time < 10) {
+//   greeting = "Good morning";
+// } else if (time < 20) {
+//   greeting = "Good day";
+// } else {
+//   greeting = "Good evening";
+// }
+
 
 
 
