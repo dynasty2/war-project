@@ -115,12 +115,12 @@ var b = battleDeck2[0]
 
 function battle(a,b) {
 	if (a > b) { 
-		battleDeck1.pop(a) && battleDeck2.pop(b) && player1Hand.unshift(a,b);
+		battleDeck1.pop(a) && battleDeck2.pop(b) && player1Hand.unshift(a,b) && console.log("Player one wins the round.");
 	} else if (a < b) { 
-		battleDeck1.pop(a) && battleDeck2.pop(b) && player2Hand.unshift(a,b);
+		battleDeck1.pop(a) && battleDeck2.pop(b) && player2Hand.unshift(a,b) && console.log("Player two wins the round.");
     } else {
   	    function war(a,b,c) {
-  	    	player1Hand.pop(a,b,c) && battleDeck1.unshift(a,b,c) && player2Hand.pop(a,b,c) && battleDeck2.unshift(a,b,c);
+  	    	player1Hand.pop(a,b,c) && battleDeck1.unshift(a,b,c) && player2Hand.pop(a,b,c) && battleDeck2.unshift(a,b,c) && console.log("It's War!");
   	    }
   }
   }	
