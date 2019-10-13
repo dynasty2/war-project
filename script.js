@@ -85,11 +85,25 @@ const battleDeck2 = []
 k = player1Hand.pop() 
 m = player2Hand.pop() 
 
-battleDeck1.unshift(k);
-battleDeck2.unshift(m);
+function play(hand) {
+	if (player1Hand > 0) {
+		player1Hand.pop() + battleDeck1(k);
+}     else if  (player2Hand > 0) {
+		player2Hand.pop(); + battleDeck2(m);
+}	  else  { console.log("Game Over")
+}
+} //this function works as written but ends game.
 
-console.log(battleDeck1);
-console.log(battleDeck2);
+
+// function play(a,b) {
+// 	((k && m) + (battleDeck1.unshift(k) + battleDeck2(m)));
+// }
+
+// battleDeck1.unshift(k);
+// battleDeck2.unshift(m);
+
+// console.log(battleDeck1);
+// console.log(battleDeck2);
 
 var a = battleDeck1[0]
 var b = battleDeck2[0]
@@ -119,13 +133,7 @@ function battle(a,b) {
 // console.log(player1Hand)
 // console.log(player2Hand)
 
-// if (time < 10) {
-//   greeting = "Good morning";
-// } else if (time < 20) {
-//   greeting = "Good day";
-// } else {
-//   greeting = "Good evening";
-// }
+
 
 
 
