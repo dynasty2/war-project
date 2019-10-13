@@ -52,8 +52,6 @@ const warDeckCards = [
 	{ suit: "Clubs", value: 13 },
 	{ suit: "Clubs", value: 14 }
 ];
-// console.log(warDeckCards);
-// console.log(warDeckCards) making sure the cards showed properly 
 
 function shuffle (array) { //https://www.frankmitchell.org/2015/01/fisher-yates/
   var i = 0
@@ -71,16 +69,23 @@ shuffle(warDeckCards);
 console.log(warDeckCards);
 
 const player1Hand = warDeckCards.slice(0,26)
-const player2Hand = warDeckCards.slice(26)
+const player2Hand = warDeckCards.slice(26) 
 
 console.log(player1Hand);
 console.log(player2Hand);
 
-// console.log(player1Hand.pop());
-// console.log(player2Hand.pop());
+console.log("Begin round one.")
 
 const battleDeck1 = []
 const battleDeck2 = []
+
+var a = battleDeck1[0];
+var b = battleDeck2[0];
+var c = warDeck[0];
+// var c = battleDeck3[0]
+// var a = battleDeck4[0]
+// var b = battleDeck5[0]
+// var c = battleDeck6[0]
 
 function play(hand) {
 k = player1Hand.pop() 
@@ -89,29 +94,25 @@ battleDeck1.unshift(k);
 battleDeck2.unshift(m);
 console.log(battleDeck1);
 console.log(battleDeck2);
+} 
+
+//war phase. If players tie during battle. call war.
+
+function war(a,b) {
+	if (a = b) {
+		battleDeck1.unshift(k * 2 && m * 2)
+	}
 }
 
-// function play(hand) {
-// 	if (player1Hand > 0) {
-// 		player1Hand.pop() + battleDeck1(k);
-// }     else if  (player2Hand > 0) {
-// 		player2Hand.pop(); + battleDeck2(m);
-// }	  else  { console.log("Game Over")
-// }
-// } //this function works as written but ends game.
+// in theory. those cards will go into the battleDeck and then initiate a rugular play function.
 
+function warComplete(a,b) {
+	if (a > b) {
 
-// for (i = 0, len = cars.length, text = ""; i < len; i++) {
-//   text += cars[i] + "<br>";
-// }
+	}
+}
 
-// function play(a,b) {
-// 	((k && m) + (battleDeck1.unshift(k) + battleDeck2(m)));
-// }
-
-var a = battleDeck1[0]
-var b = battleDeck2[0]
-
+// this warComplete function should decide who wins and properly delegate into the player deck.
 
 function battle(a,b) {
 	if (a > b) { 
@@ -119,24 +120,33 @@ function battle(a,b) {
 	} else if (a < b) { 
 		battleDeck1.pop(a) && battleDeck2.pop(b) && player2Hand.unshift(a,b) && console.log("Player two wins the round.");
     } else {
-  	    function war(a,b,c) {
-  	    	player1Hand.pop(a,b,c) && battleDeck1.unshift(a,b,c) && player2Hand.pop(a,b,c) && battleDeck2.unshift(a,b,c) && console.log("It's War!");
+  	    function war(statement) {
+  	    	console.log("It's War!");
   	    }
   }
-  }	
+  console.log("End of Round one")
+  }
 
 
 
-  // function battle() {
-  // 	if 
-  // }
-// battle(k,m)
-// console.log(player1Hand)
-// console.log(player2Hand)
+if (player1Hand < 1) console.log("Player Two wins!")
+if (player2Hand < 1) console.log("Player One wins!")
 
-// console.log(player1Hand)
-// console.log(player2Hand)
 
+
+
+
+// function battle(a,b) {
+// 	if (a > b) { 
+// 		battleDeck1.pop(a) && battleDeck2.pop(b) && player1Hand.unshift(a,b) && console.log("Player one wins the round.");
+// 	} else if (a < b) { 
+// 		battleDeck1.pop(a) && battleDeck2.pop(b) && player2Hand.unshift(a,b) && console.log("Player two wins the round.");
+//     } else {
+//   	    function war(a,b,c) {
+//   	    	player1Hand.pop(a,b,c) && battleDeck1.unshift(a,b,c) && player2Hand.pop(a,b,c) && battleDeck2.unshift(a,b,c) && console.log("It's War!");
+//   	    }
+//   }
+//   } back-up battle function
 
 
 
