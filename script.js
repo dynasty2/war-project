@@ -79,26 +79,42 @@ console.log(player2Hand);
 // console.log(player1Hand.pop());
 // console.log(player2Hand.pop());
 
-const battleDeck = []
+const battleDeck1 = []
+const battleDeck2 = []
 
-k = player1Hand.pop()
-battleDeck.unshift(k) // P 1
-m = player2Hand.pop()
-battleDeck.unshift(m) // P 2
-console.log(battleDeck)
+k = player1Hand.pop() 
+m = player2Hand.pop() 
+
+battleDeck1.unshift(k);
+battleDeck2.unshift(m);
+
+console.log(battleDeck1);
+console.log(battleDeck2);
+
+var a = battleDeck1[0]
+var b = battleDeck2[0]
+
 
 function battle(a,b) {
-	if (k > m) { 
-		battleDeck.pop(k,m) && player1Hand.unshift(k,m);
-	} else if (k < m) { 
-		battleDeck.pop(k,m) && player2Hand.unshift(k,m);
+	if (a > b) { 
+		battleDeck1.pop(a) && battleDeck2.pop(b) && player1Hand.unshift(a,b);
+	} else if (a < b) { 
+		battleDeck1.pop(a) && battleDeck2.pop(b) && player2Hand.unshift(a,b);
     } else {
   	    function war(a,b,c) {
-  	    	player1Hand.pop(a,b,c) && player2Hand.pop(a,b,c);
+  	    	player1Hand.pop(a,b,c) && battleDeck1.unshift(a,b,c) && player2Hand.pop(a,b,c) && battleDeck2.unshift(a,b,c);
   	    }
   }
   }	
 
+
+
+  // function battle() {
+  // 	if 
+  // }
+// battle(k,m)
+// console.log(player1Hand)
+// console.log(player2Hand)
 
 // console.log(player1Hand)
 // console.log(player2Hand)
