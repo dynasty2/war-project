@@ -87,30 +87,36 @@ var c = warDeck[0];
 // var b = battleDeck5[0]
 // var c = battleDeck6[0]
 
-function play(hand) {
-k = player1Hand.pop() 
-m = player2Hand.pop() 
-battleDeck1.unshift(k);
-battleDeck2.unshift(m);
-console.log(battleDeck1);
-console.log(battleDeck2);
+function play() {
+	let k = player1Hand.pop() // draw one card for player1
+	cardTable.push(k)	      // add it to the middle of the table
+	let m = player2Hand.pop() // draw one card for player2
+	cardTable.push(m)		  // add it to the middle of the table
+	battle(k, m)              // invoke the 'battle' function
 } 
 
 //war phase. If players tie during battle. call war.
 
 function war(a,b) {
 	if (a = b) {
-		battleDeck1.unshift(k * 2 && m * 2)
+		battleDeck1.unshift 
 	}
 }
 
 // in theory. those cards will go into the battleDeck and then initiate a rugular play function.
 
 function warComplete(a,b) {
-	if (a > b) {
-
-	}
-}
+	if (a > b) { 
+		battleDeck1.pop(a) && battleDeck2.pop(b) && player1Hand.unshift(a,b) && console.log("Player one wins the war.");
+	} else if (a < b) { 
+		battleDeck1.pop(a) && battleDeck2.pop(b) && player2Hand.unshift(a,b) && console.log("Player two wins the war.");
+    } else {
+  	    function war(statement) {
+  	    	console.log("It's War again!");
+  	    }
+  }
+  console.log("End of the War round.")
+  }
 
 // this warComplete function should decide who wins and properly delegate into the player deck.
 
@@ -147,17 +153,4 @@ if (player2Hand < 1) console.log("Player One wins!")
 //   	    }
 //   }
 //   } back-up battle function
-
-
-
-
-
-
-
-
-
-
-
-
-
 
