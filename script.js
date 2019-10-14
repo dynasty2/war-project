@@ -121,18 +121,35 @@ function warComplete(a,b) {
 // this warComplete function should decide who wins and properly delegate into the player deck.
 
 function battle(a,b) {
-	if (a > b) { 
-		battleDeck1.pop(a) && battleDeck2.pop(b) && player1Hand.unshift(a,b) && console.log("Player one wins the round.");
-	} else if (a < b) { 
-		battleDeck1.pop(a) && battleDeck2.pop(b) && player2Hand.unshift(a,b) && console.log("Player two wins the round.");
+	if (a.value > b.value) {   
+		while (cardTable.length !== 0) { 
+			player1Hand.unshift(cardTable.pop())       
+		}
+		cardTable = [] 
+		console.log("Player One plays " + a.value + " of " + a.suit + ". Player Two plays " + b.value + " of " + b.suit + ". Player One wins the round!")
+		console.log("End of round " + roundNumber + "! Player One has " + player1Hand.length + " cards left. Player Two has " + player2Hand.length + " cards left.")
+		roundNumber++
+	} else if (a.value < b.value) { 
+		while (cardTable.length !== 0) { 
+			player2Hand.unshift(cardTable.pop())        
+		}
+		cardTable = [] 
+		console.log("Player One plays " + a.value + " of " + a.suit + ". Player Two plays " + b.value + " of " + b.suit + ". Player Two wins the round!")
+		console.log("End of round " + roundNumber + "! Player One has " + player1Hand.length + " cards left. Player Two has " + player2Hand.length + " cards left.")
+		roundNumber++
     } else {
-  	    function war(statement) {
-  	    	console.log("It's War!");
-  	    }
-  }
-  console.log("End of Round one")
-  }
-
+  		if (player1Hand.length < 4) {
+			  notEnoughCardsPlayerOne = true
+			  return
+		}
+  		if (player2Hand.length < 4) {
+			  notEnoughCardsPlayerTwo = true
+			  return
+		}
+		console.log("Player One plays " + a.value + " of " + a.suit + ". Player Two plays " + b.value + " of " + b.suit + ". It's War!")
+		war()
+  	}
+}
 
 
 if (player1Hand < 1) console.log("Player Two wins!")
