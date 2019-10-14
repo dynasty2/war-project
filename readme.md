@@ -5,7 +5,7 @@
 
 This is War! Well, at least the card game of War... thank goodness.  
 
-In War, two players must evenly divide the 52 cards amongst themselves.  At the same time, each player will reveal their top card to the other.  Whomever has the highest cards gets to take both.  However, if the players tie, a war phase begins in which both players will lay down three careds. The last card decides the fate of the round, unless its a tie agian. 
+In War, two players must evenly divide the 52 cards amongst themselves.  At the same time, each player will reveal their top card to the other.  Whoever has the highest card gets to take both.  However, if the players tie, a war phase begins in which both players will lay down three cards. The value of the last card decides the fate of the round, unless its a tie agian. 
 
 The first player to capture all 52 cards wins!
 
