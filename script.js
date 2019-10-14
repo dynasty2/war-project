@@ -51,41 +51,19 @@ const warDeckCards = [
 	{ suit: "Clubs", value: 12 },
 	{ suit: "Clubs", value: 13 },
 	{ suit: "Clubs", value: 14 }
-];
+]
 
 function shuffle (array) { //https://www.frankmitchell.org/2015/01/fisher-yates/
   var i = 0
     , j = 0
     , temp = null
-
   for (i = array.length - 1; i > 0; i -= 1) {
     j = Math.floor(Math.random() * (i + 1))
     temp = array[i]
     array[i] = array[j]
     array[j] = temp
   }
-};
-shuffle(warDeckCards);
-console.log(warDeckCards);
-
-const player1Hand = warDeckCards.slice(0,26)
-const player2Hand = warDeckCards.slice(26) 
-
-console.log(player1Hand);
-console.log(player2Hand);
-
-console.log("Begin round one.")
-
-const battleDeck1 = []
-const battleDeck2 = []
-
-var a = battleDeck1[0];
-var b = battleDeck2[0];
-var c = warDeck[0];
-// var c = battleDeck3[0]
-// var a = battleDeck4[0]
-// var b = battleDeck5[0]
-// var c = battleDeck6[0]
+}
 
 function play() {
 	let k = player1Hand.pop() // draw one card for player1
@@ -135,5 +113,31 @@ function war() {
 	}     
 }
 
+shuffle(warDeckCards);
+const player1Hand = warDeckCards.slice(0,26)
+const player2Hand = warDeckCards.slice(26)
+let cardTable = []
+let roundNumber = 0
+let notEnoughCardsPlayerOne = false
+let notEnoughCardsPlayerTwo = false
 
+function start() {
+	while (player1Hand.length !== 0 || player2Hand.length !== 0 || notEnoughCardsPlayerOne === true || notEnoughCardsPlayerTwo === true) {
+		play()
+	}
+	if (player1Hand.length === 0) {
+		console.log('PLAYER TWO WINS!!!')
+	}
+	if (player2Hand.length === 0) {
+		console.log('PLAYER ONE WINS!!!')
+	}
+	if (notEnoughCardsPlayerOne === true) {
+		console.log('PLAYER TWO WINS!!!')
+	}
+	if (notEnoughCardsPlayerTwo === true) {
+		console.log('PLAYER ONE WINS!!!')
+	}
+}
+
+start()
 
