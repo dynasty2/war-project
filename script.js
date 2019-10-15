@@ -122,7 +122,7 @@ let notEnoughCardsPlayerOne = false
 let notEnoughCardsPlayerTwo = false
 
 function start() {
-	while (player1Hand.length !== 0 || player2Hand.length !== 0 || notEnoughCardsPlayerOne === true || notEnoughCardsPlayerTwo === true) {
+	while (player1Hand.length !== 0 || player2Hand.length !== 0 || notEnoughCardsPlayerOne !== true || notEnoughCardsPlayerTwo !== true) {
 		play()
 	}
 	if (player1Hand.length === 0) {
