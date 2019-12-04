@@ -74,6 +74,9 @@ function play() {
 } 
 
 function battle(a,b) {
+	// if (!a || !b) {
+	// 	return
+	// }
 	if (a.value > b.value) {   
 		while (cardTable.length !== 0) { 
 			player1Hand.unshift(cardTable.pop())       
@@ -90,7 +93,7 @@ function battle(a,b) {
 		console.log("Player One plays " + a.value + " of " + a.suit + ". Player Two plays " + b.value + " of " + b.suit + ". Player Two wins the round!")
 		console.log("End of round " + roundNumber + "! Player One has " + player1Hand.length + " cards left. Player Two has " + player2Hand.length + " cards left.")
 		roundNumber++
-    } else {
+	} else {
   		if (player1Hand.length < 4) {
 			  notEnoughCardsPlayerOne = true
 			  return
@@ -124,11 +127,18 @@ let notEnoughCardsPlayerTwo = false
 function start() {
 	while (player1Hand.length !== 0 || player2Hand.length !== 0 || notEnoughCardsPlayerOne !== true || notEnoughCardsPlayerTwo !== true) {
 		play()
+		if (player1Hand.length == 0 || player2Hand.length == 0 || notEnoughCardsPlayerOne == true || notEnoughCardsPlayerTwo == true) {
+			// console.log(player1Hand.length)
+			// console.log(player2Hand.length)
+			// console.log(notEnoughCardsPlayerOne)
+			// console.log(notEnoughCardsPlayerTwo)
+			break;
+		}
 	}
-	if (player1Hand.length === 0) {
+	if (player1Hand.length == 0) {
 		console.log('PLAYER TWO WINS!!!')
 	}
-	if (player2Hand.length === 0) {
+	if (player2Hand.length == 0) {
 		console.log('PLAYER ONE WINS!!!')
 	}
 	if (notEnoughCardsPlayerOne === true) {
